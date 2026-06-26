@@ -1,0 +1,683 @@
+/* ══════════════════════════════════════
+   루트
+══════════════════════════════════════ */
+.root {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding-bottom: 5rem;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+/* ══════════════════════════════════════
+   헤더
+══════════════════════════════════════ */
+.header {
+  padding: 3rem 1.25rem 1.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 0.5875rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: var(--text-3);
+  text-transform: uppercase;
+  margin-bottom: 0.875rem;
+}
+
+.title {
+  font-family: var(--serif);
+  font-size: 2.375rem;
+  font-weight: 300;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  color: var(--text-1);
+  margin-bottom: 0.625rem;
+}
+
+.headerDesc {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--text-2);
+  letter-spacing: 0.02em;
+  margin-bottom: 1.25rem;
+}
+
+/* RIR 설명 칩 */
+.rirChip {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  background: var(--bg-accent);
+  border: 1px solid var(--border-acc);
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  max-width: 100%;
+}
+
+.rirDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.rirChipText {
+  font-family: var(--sans);
+  font-size: 0.6875rem;
+  font-weight: 300;
+  color: var(--accent);
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+/* ══════════════════════════════════════
+   1RM 패널
+══════════════════════════════════════ */
+.rmWrap {
+  border-bottom: 1px solid var(--border);
+}
+
+.rmToggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  gap: 0.5rem;
+}
+
+.rmToggleLabel {
+  font-family: var(--sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-1);
+  letter-spacing: 0.01em;
+}
+
+.rmToggleIcon {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  color: var(--text-3);
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.rmOpen {
+  transform: rotate(180deg);
+}
+
+.rmPanel {
+  padding: 0 1.25rem 1.5rem;
+}
+
+.rmDesc {
+  font-family: var(--serif);
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--text-2);
+  line-height: 1.8;
+  margin-bottom: 1.125rem;
+  word-break: keep-all;
+}
+
+.rmInputGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 0.875rem;
+}
+
+.rmInputRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.rmInputLabel {
+  font-family: var(--serif);
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--text-1);
+  flex: 1;
+  word-break: keep-all;
+}
+
+.rmInputRight {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  flex-shrink: 0;
+}
+
+.rmInput {
+  width: 80px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-mid);
+  border-radius: var(--r-badge);
+  padding: 0.5rem 0.625rem;
+  font-family: var(--sans);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text-1);
+  text-align: right;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.rmInput:focus {
+  border-color: var(--accent);
+}
+
+.rmUnit {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--text-3);
+  width: 1.5rem;
+}
+
+.rmNote {
+  font-family: var(--sans);
+  font-size: 0.625rem;
+  font-weight: 300;
+  color: var(--text-3);
+  letter-spacing: 0.08em;
+  text-align: right;
+}
+
+/* ══════════════════════════════════════
+   요일 탭
+══════════════════════════════════════ */
+.nav {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border-bottom: 1px solid var(--border);
+  width: 100%;
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0.875rem 0;
+  background: none;
+  border: none;
+  border-right: 1px solid var(--border);
+  cursor: pointer;
+  position: relative;
+  transition: background 0.12s;
+  min-width: 0;
+}
+
+.tab:last-child {
+  border-right: none;
+}
+
+.tab:not(.tabRest):not(.tabActive):active {
+  background: var(--bg-card);
+}
+
+.tab::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.tabActive::after {
+  opacity: 1;
+}
+
+.tabShort {
+  font-family: var(--sans);
+  font-size: 0.475rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--text-3);
+  text-transform: uppercase;
+}
+
+.tabKo {
+  font-family: var(--serif);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: var(--text-2);
+  transition: color 0.12s;
+}
+
+.tabActive .tabKo {
+  color: var(--accent);
+}
+
+.tabRest {
+  cursor: default;
+  opacity: 0.3;
+}
+
+/* ══════════════════════════════════════
+   날짜 메타
+══════════════════════════════════════ */
+.dayMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.dayTag {
+  font-family: var(--sans);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.dayDuration {
+  font-family: var(--sans);
+  font-size: 0.625rem;
+  font-weight: 400;
+  color: var(--text-3);
+  letter-spacing: 0.08em;
+}
+
+/* ══════════════════════════════════════
+   메인
+══════════════════════════════════════ */
+.main {
+  padding: 1.5rem 1.25rem 0;
+}
+
+/* 운동 헤더 */
+.wkHeader {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.wkTitleRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.875rem;
+}
+
+.wkSub {
+  font-family: var(--sans);
+  font-size: 0.5875rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  color: var(--text-3);
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.wkTitle {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--text-1);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.wkFocus {
+  font-family: var(--sans);
+  font-size: 0.5875rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-dim);
+  background: var(--bg-accent);
+  border: 1px solid var(--border-acc);
+  border-radius: 4px;
+  padding: 0.3rem 0.5rem;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.wkRationale {
+  font-family: var(--serif);
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: var(--text-2);
+  line-height: 1.85;
+  word-break: keep-all;
+}
+
+/* ══════════════════════════════════════
+   종목 카드
+══════════════════════════════════════ */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-card);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+/* 카드 상단 */
+.cardHead {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+}
+
+.cardNum {
+  font-family: var(--sans);
+  font-size: 0.5625rem;
+  font-weight: 400;
+  color: var(--text-3);
+  letter-spacing: 0.06em;
+  padding-top: 0.25rem;
+  flex-shrink: 0;
+  width: 1.25rem;
+}
+
+.cardTitleWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+  flex: 1;
+}
+
+.cardTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.cardName {
+  font-family: var(--serif);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text-1);
+  line-height: 1.3;
+  word-break: keep-all;
+}
+
+.cardBadge {
+  font-family: var(--sans);
+  font-size: 0.5rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--bg-accent);
+  border: 1px solid var(--border-acc);
+  border-radius: 3px;
+  padding: 0.2rem 0.4rem;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.cardEng {
+  font-family: var(--sans);
+  font-size: 0.625rem;
+  font-weight: 300;
+  color: var(--text-3);
+  letter-spacing: 0.03em;
+}
+
+/* 스펙 행 */
+.specRow {
+  display: flex;
+  align-items: stretch;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-badge);
+  overflow: hidden;
+}
+
+.spec {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  padding: 0.6rem 0.25rem;
+  min-width: 0;
+}
+
+.specDiv {
+  width: 1px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+.specLabel {
+  font-family: var(--sans);
+  font-size: 0.5rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: var(--text-3);
+  text-transform: uppercase;
+}
+
+.specVal {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-1);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  padding: 0 0.125rem;
+}
+
+.specRir {
+  color: var(--accent);
+}
+
+/* ══════════════════════════════════════
+   추천 중량 블록
+══════════════════════════════════════ */
+.weightBlock {
+  background: var(--bg-accent);
+  border: 1px solid var(--border-acc);
+  border-radius: var(--r-badge);
+  padding: 0.75rem 0.875rem;
+}
+
+.weightTitle {
+  font-family: var(--sans);
+  font-size: 0.5875rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: var(--accent-dim);
+  text-transform: uppercase;
+  margin-bottom: 0.625rem;
+}
+
+.weightRow {
+  display: flex;
+  gap: 0;
+}
+
+.weightItem {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.weightItem + .weightItem {
+  border-left: 1px solid var(--border-acc);
+}
+
+.weightRep {
+  font-family: var(--sans);
+  font-size: 0.5625rem;
+  font-weight: 400;
+  color: var(--accent-dim);
+  letter-spacing: 0.08em;
+}
+
+.weightKg {
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+/* ══════════════════════════════════════
+   팁 토글
+══════════════════════════════════════ */
+.tipBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  border-top: 1px solid var(--border);
+  padding: 0.625rem 0 0;
+  cursor: pointer;
+  gap: 0.5rem;
+}
+
+.tipBtn span:first-child {
+  font-family: var(--sans);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  color: var(--text-3);
+  letter-spacing: 0.05em;
+}
+
+.tipIcon {
+  font-family: var(--sans);
+  font-size: 0.6875rem;
+  color: var(--text-3);
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.tipOpen {
+  transform: rotate(180deg);
+}
+
+.tipText {
+  font-family: var(--serif);
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: var(--text-2);
+  line-height: 1.82;
+  word-break: keep-all;
+  padding-top: 0.375rem;
+}
+
+/* ══════════════════════════════════════
+   안내 노트
+══════════════════════════════════════ */
+.note {
+  margin-top: 1.5rem;
+  padding: 1rem 1rem 1rem 1.125rem;
+  border-left: 2px solid var(--border-acc);
+  background: var(--bg-accent);
+  border-radius: 0 6px 6px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.noteItem {
+  font-family: var(--serif);
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--text-2);
+  line-height: 1.8;
+  word-break: keep-all;
+}
+
+/* ══════════════════════════════════════
+   휴식일
+══════════════════════════════════════ */
+.restView {
+  padding: 3.5rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.restLine {
+  width: 1.75rem;
+  height: 1px;
+  background: var(--text-3);
+}
+
+.restTitle {
+  font-family: var(--serif);
+  font-size: 1.0625rem;
+  font-weight: 300;
+  color: var(--text-1);
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+.restBody {
+  font-family: var(--serif);
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: var(--text-2);
+  line-height: 1.9;
+  word-break: keep-all;
+}
+
+/* ══════════════════════════════════════
+   푸터
+══════════════════════════════════════ */
+.footer {
+  margin-top: 3.5rem;
+  padding: 1.5rem 1.25rem;
+  border-top: 1px solid var(--border);
+  font-family: var(--sans);
+  font-size: 0.5625rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  color: var(--text-3);
+  text-transform: uppercase;
+}
+
+/* ══════════════════════════════════════
+   데스크탑 보정 (폰 프레임 효과)
+══════════════════════════════════════ */
+@media (min-width: 480px) {
+  .root {
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+  }
+}

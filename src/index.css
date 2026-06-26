@@ -1,0 +1,52 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg:          #0a0a0a;
+  --bg-card:     #131313;
+  --bg-deep:     #0f0f0f;
+  --bg-accent:   rgba(200, 184, 154, 0.07);
+  --border:      rgba(255, 255, 255, 0.07);
+  --border-mid:  rgba(255, 255, 255, 0.12);
+  --border-acc:  rgba(200, 184, 154, 0.35);
+  --text-1:      #eeebe3;
+  --text-2:      #96948e;
+  --text-3:      #4a4845;
+  --accent:      #c8b89a;
+  --accent-dim:  #9e8f76;
+  --danger:      #e06c6c;
+  --serif:       'Noto Serif KR', serif;
+  --sans:        'DM Sans', sans-serif;
+  --r-card:      10px;
+  --r-badge:     6px;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-1);
+  font-family: var(--serif);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+button, input {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  font-family: inherit;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+input[type="number"] { -moz-appearance: textfield; }
